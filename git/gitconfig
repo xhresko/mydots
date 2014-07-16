@@ -66,5 +66,3 @@
 [user]
     name = Juraj Hreško
     email = juraj.hresko@firma.seznam.cz
-[push]
-	default = simple
