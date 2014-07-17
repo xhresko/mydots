@@ -32,7 +32,8 @@ if has("syntax")
     set background=dark
     " Set colorscheme
     colorscheme solarized
-    silent! colorscheme solarized
+    " Fix for terminal colors
+    hi Comment ctermfg=Magenta
 endif
 
 if has("cmdline_info")
