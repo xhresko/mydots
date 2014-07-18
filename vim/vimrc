@@ -143,6 +143,11 @@ vnoremap <C-y> 3<C-y>
 " Make `Y` work from the cursor to the end of line (which is more logical)
 nnoremap Y y$
 
+" Make `F2` work as paste toggle - also with displaying actual mode
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
+
 " Load local machine settings if they exist
 if filereadable(glob("$HOME/.vimrc.local"))
     source $HOME/.vimrc.local
