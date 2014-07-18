@@ -17,14 +17,11 @@ fi
 
 load_dotfiles() {
     declare -a files=(
-        #$HOME/.rvm/scripts/rvm # Load RVM into a shell session *as a function*
         $HOME/.mydots/shell/bash_options # Options
         $HOME/.mydots/shell/bash_exports # Exports
         $HOME/.mydots/shell/bash_aliases # Aliases
-        #$HOME/.mydots/shell/functions/* # Functions
         $HOME/.mydots/shell/bash_prompt # Custom bash prompt
         $HOME/.mydots/shell/bash_paths # Path modifications
-        #$(brew --prefix)/etc/bash_completion # Bash completion (installed via Homebrew)
         $HOME/.bash_profile.local # Local and private settings not under version control (e.g. git credentials)
     )
 
