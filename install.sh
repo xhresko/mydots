@@ -5,14 +5,14 @@
 
 rm -fr ~/.bash_profile ~/.bashrc ~/.gitattributes ~/.gitignore ~/.gitconfig ~/.vim ~/.vimrc ~/.gvimrc
 
-ln -s ~/.mydots/shell/bash_profile ~/.bash_profile
-ln -s ~/.mydots/shell/bashrc ~/.bashrc
-ln -s ~/.mydots/git/gitattributes ~/.gitattributes
-ln -s ~/.mydots/git/gitignore ~/.gitignore
-ln -s ~/.mydots/git/gitconfig ~/.gitconfig
-ln -s ~/.mydots/vim/ ~/.vim
-ln -s ~/.mydots/vim/vimrc ~/.vimrc
-ln -s ~/.mydots/vim/gvimrc ~/.gvimrc
+ln -sf ~/.mydots/shell/bash_profile ~/.bash_profile
+ln -sf ~/.mydots/shell/bashrc ~/.bashrc
+ln -sf ~/.mydots/git/gitattributes ~/.gitattributes
+ln -sf ~/.mydots/git/gitignore ~/.gitignore
+ln -sf ~/.mydots/git/gitconfig ~/.gitconfig
+ln -sf ~/.mydots/vim/ ~/.vim
+ln -sf ~/.mydots/vim/vimrc ~/.vimrc
+ln -sf ~/.mydots/vim/gvimrc ~/.gvimrc
 
 # git clone git://github.com/klen/python-mode.git ~/.mydots/vim/bundle/python-mode
 git clone git://github.com/altercation/vim-colors-solarized.git ~/.mydots/vim/bundle/vim-colors-solarized
