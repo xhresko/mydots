@@ -1,0 +1,17 @@
+#!/usr/local/bin/perl
+
+$num_args = $#ARGV + 1;
+if ($num_args != 2) {
+    print "\nUsage: undelete /dev/sdX TEXT_FROM_FILE\n";
+    exit;
+}
+
+$device=$ARGV[0];
+$text_from_file=$ARGV[1];
+
+open(DEV, $device) or die "Can't open: $!\n";
+
+while (read(DEV, $buf, 4096)) {
+  print tell(DEV), "\n", $buf, "\n"
+    if $buf =~ /$text_from_file/;
+}
