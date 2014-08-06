@@ -13,6 +13,8 @@ ln -sf ~/.mydots/git/gitconfig ~/.gitconfig
 ln -sf ~/.mydots/vim/ ~/.vim
 ln -sf ~/.mydots/vim/vimrc ~/.vimrc
 ln -sf ~/.mydots/vim/gvimrc ~/.gvimrc
+ln -sf ~/.mydots/i3/ ~/.i3
+ln -sf ~/.mydots/X/Xdefaults ~/.Xdefaults
 
 # git clone git://github.com/klen/python-mode.git ~/.mydots/vim/bundle/python-mode
 git clone git://github.com/altercation/vim-colors-solarized.git ~/.mydots/vim/bundle/vim-colors-solarized
