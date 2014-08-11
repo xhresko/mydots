@@ -1,0 +1,14 @@
+# ArchLinux
+wget
+htop
+mc
+vim
+iotop
+
+# i3
+alsa-utils
+dunst
+numlockx
+
+# AUR
+profanity-git
