@@ -185,11 +185,16 @@ client.urgent #d33682 #d33682 #fdf6e3 #dc322f
 
 #exec --no-startup-id i3-msg 'workspace "1: www"; exec firefox; workspace "2: xmpp"; exec gnome-terminal -e profanity; exec gnome-terminal -e profanity; exec dunst -conf ~/.dunstrc'
 exec --no-startup-id i3-msg 'workspace "1: www"; exec firefox; workspace "2: xmpp"; exec i3-sensible-terminal -e profanity; exec i3-sensible-terminal -e profanity; exec dunst -conf ~/.i3/dunstrc; workspace "3: home"; exec i3-sensible-terminal -e ssh 89.177.30.0'
-exec --no-startup-id nm-applet
 
 # Keyboard Layouts
 exec --no-startup-id setxkbmap us,sk,cz -variant ,qwerty,qwerty
 exec --no-startup-id setxkbmap -option 'grp:ctrl_alt_toggle'
+
+# NumLock
+exec --no-startup-id numlockx on
+
+# Network Manager
+exec --no-startup-id nm-applet
 
 # Volume control (ALSA)
 bindsym $mod+Prior exec amixer -q sset Master 5%+ unmute
