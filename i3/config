@@ -15,7 +15,8 @@ set $mod Mod1
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 8
+#font pango:DejaVu Sans Mono 8
+font pango:Terminus 10
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
@@ -28,6 +29,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
+#bindsym $mod+Return exec gnome-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -90,9 +92,12 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
+# bindsym $mod+1 workspace 1
+bindsym $mod+1 workspace "1: www"
+# bindsym $mod+2 workspace 2
+bindsym $mod+2 workspace "2: xmpp"
+#bindsym $mod+3 workspace 3
+bindsym $mod+3 workspace "3: home"
 bindsym $mod+4 workspace 4
 bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
@@ -102,9 +107,12 @@ bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
+#bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+1 move container to workspace "1: www"
+#bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+2 move container to workspace "2: xmpp"
+#bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+3 move container to workspace "3: home"
 bindsym $mod+Shift+4 move container to workspace 4
 bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
@@ -173,3 +181,7 @@ client.focused #859900 #859900 #fdf6e3 #859900
 client.focused_inactive #073642 #073642 #eee8d5 #6c71c4
 client.unfocused #073642 #073642 #93a1a1 #586e75
 client.urgent #d33682 #d33682 #fdf6e3 #dc322f
+
+
+#exec --no-startup-id i3-msg 'workspace "1: www"; exec firefox; workspace "2: xmpp"; exec gnome-terminal -e profanity; exec gnome-terminal -e profanity; exec dunst -conf ~/.dunstrc'
+exec --no-startup-id i3-msg 'workspace "1: www"; exec firefox; workspace "2: xmpp"; exec i3-sensible-terminal -e profanity; exec i3-sensible-terminal -e profanity; exec dunst -conf ~/.i3/dunstrc; workspace "3: home"; exec i3-sensible-terminal -e ssh 89.177.30.0'
