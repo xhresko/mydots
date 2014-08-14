@@ -170,7 +170,8 @@ bindsym $mod+r mode "resize"
 exec --no-startup-id xrandr --output DP1 --auto --primary --output eDP1 --auto --right-of DP1
 
 #exec --no-startup-id i3-msg 'workspace "1: www"; exec firefox; workspace "2: xmpp"; exec gnome-terminal -e profanity; exec gnome-terminal -e profanity; exec dunst -conf ~/.dunstrc'
-exec --no-startup-id i3-msg 'workspace "1: www"; exec firefox; workspace "2: xmpp"; exec i3-sensible-terminal -e profanity; exec i3-sensible-terminal -e profanity; exec dunst -conf ~/.i3/dunstrc; workspace "3: home"; exec i3-sensible-terminal -e ssh 89.177.30.0'
+#exec --no-startup-id i3-msg 'workspace "1: www"; exec firefox; workspace "2: xmpp"; exec i3-sensible-terminal -e profanity; exec i3-sensible-terminal -e profanity; exec dunst -conf ~/.i3/dunstrc; workspace "3: home"; exec i3-sensible-terminal -e ssh 89.177.30.0'
+exec --no-startup-id i3-msg 'workspace "1: www"; exec firefox; workspace "2: xmpp"; exec pidgin; exec dunst -conf ~/.i3/dunstrc; workspace "3: home"; exec i3-sensible-terminal -e ssh 89.177.30.0'
 
 # Keyboard Layouts
 exec setxkbmap us,sk,cz -variant ,qwerty,qwerty
@@ -211,6 +212,9 @@ bindsym $mod+x move workspace to output right
 
 # Put this window on the presentation output.
 bindsym $mod+Shift+x move container to output VGA1
+
+# Put this window on the presentation output.
+bindsym $mod+Shift+Tab exec ~/.i3/screenconf
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
