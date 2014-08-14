@@ -9,7 +9,8 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+#set $mod Mod1
+set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -134,6 +135,11 @@ bindsym $mod+Shift+grave move scratchpad
 # Show the first scratchpad window
 bindsym $mod+grave scratchpad show
 
+# next/previous workspace
+bindsym Mod1+Tab focus right
+bindsym Mod1+Shift+Tab focus left
+bindsym $mod+Tab workspace back_and_forth
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -160,6 +166,52 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Two display setup
+exec --no-startup-id xrandr --output DP1 --auto --primary --output eDP1 --auto --right-of DP1
+
+#exec --no-startup-id i3-msg 'workspace "1: www"; exec firefox; workspace "2: xmpp"; exec gnome-terminal -e profanity; exec gnome-terminal -e profanity; exec dunst -conf ~/.dunstrc'
+exec --no-startup-id i3-msg 'workspace "1: www"; exec firefox; workspace "2: xmpp"; exec i3-sensible-terminal -e profanity; exec i3-sensible-terminal -e profanity; exec dunst -conf ~/.i3/dunstrc; workspace "3: home"; exec i3-sensible-terminal -e ssh 89.177.30.0'
+
+# Keyboard Layouts
+exec setxkbmap us,sk,cz -variant ,qwerty,qwerty
+exec setxkbmap -option 'grp:ctrl_alt_toggle'
+
+# Lock Screen, Suspend
+#bindsym Mod4+l exec i3lock
+bindsym $mod+Ctrl+l exec ~/.i3/lock
+bindsym $mod+Ctrl+s exec systemctl suspend
+
+
+# NumLock
+exec numlockx on
+
+# Network Manager
+exec nm-applet
+
+# Volume control (ALSA)
+bindsym $mod+Prior exec amixer -q sset Master 5%+ unmute
+bindsym $mod+Next exec amixer -q sset Master 5%- unmute
+bindsym $mod+Home exec amixer -q sset Master toggle
+
+bindsym XF86AudioRaiseVolume exec amixer -q sset Master 5%+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q sset Master 5%- unmute
+bindsym XF86AudioMute exec amixer -q sset Master toggle
+
+# Screen brightness
+bindsym XF86MonBrightnessUp exec /usr/bin/xbacklight -inc 15
+bindsym XF86MonBrightnessDown exec /usr/bin/xbacklight -dec 15
+
+#kebyboard LED  brightness
+bindsym XF86KbdBrightnessDown exec /usr/bin/kbdlight down
+bindsym XF86KbdBrightnessUp   exec /usr/bin/kbdlight up
+
+# Move the current workspace to the next output
+# (effectively toggles when you only have two outputs)
+bindsym $mod+x move workspace to output right
+
+# Put this window on the presentation output.
+bindsym $mod+Shift+x move container to output VGA1
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
@@ -181,22 +233,3 @@ client.focused #859900 #859900 #fdf6e3 #859900
 client.focused_inactive #073642 #073642 #eee8d5 #6c71c4
 client.unfocused #073642 #073642 #93a1a1 #586e75
 client.urgent #d33682 #d33682 #fdf6e3 #dc322f
-
-
-#exec --no-startup-id i3-msg 'workspace "1: www"; exec firefox; workspace "2: xmpp"; exec gnome-terminal -e profanity; exec gnome-terminal -e profanity; exec dunst -conf ~/.dunstrc'
-exec --no-startup-id i3-msg 'workspace "1: www"; exec firefox; workspace "2: xmpp"; exec i3-sensible-terminal -e profanity; exec i3-sensible-terminal -e profanity; exec dunst -conf ~/.i3/dunstrc; workspace "3: home"; exec i3-sensible-terminal -e ssh 89.177.30.0'
-
-# Keyboard Layouts
-exec --no-startup-id setxkbmap us,sk,cz -variant ,qwerty,qwerty
-exec --no-startup-id setxkbmap -option 'grp:ctrl_alt_toggle'
-
-# NumLock
-exec --no-startup-id numlockx on
-
-# Network Manager
-exec --no-startup-id nm-applet
-
-# Volume control (ALSA)
-bindsym $mod+Prior exec amixer -q sset Master 5%+ unmute
-bindsym $mod+Next exec amixer -q sset Master 5%- unmute
-bindsym $mod+Home exec amixer -q sset Master toggle

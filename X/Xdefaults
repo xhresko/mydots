@@ -94,8 +94,8 @@ URxvt.pointerBlank:         true
  *color15: #fdf6e3
 
 !! Home/End
-!!URxvt*keysym.Home: \033[1~
-!!URxvt*keysym.End: \033[4~
+URxvt*keysym.Home: \033[1~
+URxvt*keysym.End: \033[4~
 
 !! F1-F4
 !!*URxvt*keysym.F1:       \033OP
