@@ -11,7 +11,8 @@ default=`echo $all_on | cut -f1 -d" "`
 both=` echo "$all_on" | tr -s " " "+"`
 
 # reset to default only
-xrandr --output $default --auto
+#xrandr --output $default --auto
+xrandr --auto
 
 echo "$all_on_num devices connected:"
 echo "$all_on" | tr -s " " "\n"
