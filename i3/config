@@ -166,41 +166,23 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Two display setup
-exec --no-startup-id xrandr --output DP1 --auto --primary --output eDP1 --auto --right-of DP1
-
-#exec --no-startup-id i3-msg 'workspace "1: www"; exec firefox; workspace "2: xmpp"; exec gnome-terminal -e profanity; exec gnome-terminal -e profanity; exec dunst -conf ~/.dunstrc'
-#exec --no-startup-id i3-msg 'workspace "1: www"; exec firefox; workspace "2: xmpp"; exec i3-sensible-terminal -e profanity; exec i3-sensible-terminal -e profanity; exec dunst -conf ~/.i3/dunstrc; workspace "3: home"; exec i3-sensible-terminal -e ssh 89.177.30.0'
-exec --no-startup-id i3-msg 'workspace "1: www"; exec firefox; workspace "2: xmpp"; exec pidgin; exec dunst -conf ~/.i3/dunstrc; workspace "3: home"; exec i3-sensible-terminal -e ssh 89.177.30.0'
-
-# Keyboard Layouts
-exec setxkbmap us,sk,cz -variant ,qwerty,qwerty
-exec setxkbmap -option 'grp:ctrl_alt_toggle'
-
 # Lock Screen, Suspend
 #bindsym Mod4+l exec i3lock
 bindsym $mod+Ctrl+l exec ~/.i3/lock
 bindsym $mod+Ctrl+s exec systemctl suspend
 
-
-# NumLock
-exec numlockx on
-
-# Network Manager
-exec nm-applet
-
 # Volume control (ALSA)
-bindsym $mod+Prior exec amixer -q sset Master 5%+ unmute
-bindsym $mod+Next exec amixer -q sset Master 5%- unmute
+bindsym $mod+Prior exec amixer -q sset Master 2%+ unmute
+bindsym $mod+Next exec amixer -q sset Master 2%- unmute
 bindsym $mod+Home exec amixer -q sset Master toggle
 
-bindsym XF86AudioRaiseVolume exec amixer -q sset Master 5%+ unmute
-bindsym XF86AudioLowerVolume exec amixer -q sset Master 5%- unmute
+bindsym XF86AudioRaiseVolume exec amixer -q sset Master 2%+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q sset Master 2%- unmute
 bindsym XF86AudioMute exec amixer -q sset Master toggle
 
 # Screen brightness
-bindsym XF86MonBrightnessUp exec /usr/bin/xbacklight -inc 15
-bindsym XF86MonBrightnessDown exec /usr/bin/xbacklight -dec 15
+bindsym XF86MonBrightnessUp exec /usr/bin/xbacklight -inc 3
+bindsym XF86MonBrightnessDown exec /usr/bin/xbacklight -dec 3
 
 #kebyboard LED  brightness
 bindsym XF86KbdBrightnessDown exec /usr/bin/kbdlight down
@@ -237,3 +219,22 @@ client.focused #859900 #859900 #fdf6e3 #859900
 client.focused_inactive #073642 #073642 #eee8d5 #6c71c4
 client.unfocused #073642 #073642 #93a1a1 #586e75
 client.urgent #d33682 #d33682 #fdf6e3 #dc322f
+
+# Two display setup
+exec --no-startup-id xrandr --output DP1 --auto --primary --output eDP1 --auto --right-of DP1
+
+# Startup setup
+exec --no-startup-id i3-msg 'workspace "1: www"; exec firefox; workspace "2: xmpp"; exec pidgin; exec --no-startup-id dunst -conf ~/.i3/dunstrc; workspace "3: home"; exec i3-sensible-terminal -e ssh 89.177.30.0'
+
+# Keyboard Layouts
+exec --no-startup-id setxkbmap us,sk,cz -variant ,qwerty,qwerty
+exec  --no-startup-id setxkbmap -option 'grp:ctrl_alt_toggle'
+
+# NumLock
+exec --no-startup-id numlockx on
+
+# Network Manager
+exec --no-startup-id nm-applet
+
+# Copy.com
+exec --nostartup-id /home/juraj/copy/x86_64/CopyAgent &
