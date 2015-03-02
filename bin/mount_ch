@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [ -z "$1" ] ; then
+        echo 'Usage: mount_ch <server> [<mount point>]'
+        exit 1
+fi
+SERVER="$1":/
+MOUNT_P="/mnt/$1"
+if [ -n "$2" ] ; then
+        echo ---
+        MOUNT_P="$2"
+fi
+sshfs -o reconnect -o transform_symlinks -o TCPKeepAlive=yes -o ServerAliveCountMax=2 -o ServerAliveInterval=5 "$SERVER" "$MOUNT_P"
