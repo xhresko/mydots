@@ -9,6 +9,7 @@ iotop
 alsa-utils
 dunst
 numlockx
+scrot
 
 # AUR
 profanity-git
