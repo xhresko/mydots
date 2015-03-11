@@ -1,0 +1,16 @@
+#!/usr/bin/bash
+
+KBLAY=("us" "sk qwerty" "cz qwerty")
+
+CURRENT=`setxkbmap -print | grep "xkb_symbols" | cut -f2 -d "+" | tr -s "(" " " | tr -d ")"`
+
+for (( i = 0; i < ${#KBLAY[@]}; i++ )); do
+   if [ "${KBLAY[$i]}" = "${CURRENT}" ]; then
+       POSI=$(($i+1))
+       if [ "${POSI}" = ${#KBLAY[@]} ]; then
+           setxkbmap ${KBLAY[0]}
+       else
+           setxkbmap ${KBLAY[$POSI]}
+       fi
+   fi
+done
