@@ -1,15 +1,25 @@
 # ArchLinux
+# useradd -m -G wheel -s /bin/bash juraj
 wget
 htop
 mc
 vim
 iotop
+networkmanager
+networkmanager-openvpn
+xorg
+firefox
+pidgin
+
 
 # i3
 alsa-utils
 dunst
 numlockx
 scrot
+terminus-font
+rxvt-unicode
+dmenu
 
 # AUR
-profanity-git
+kbdlight
