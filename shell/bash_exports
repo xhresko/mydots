@@ -26,3 +26,6 @@ export MANPAGER="less -X"
 # shells instead of the default "last window closed" history
 # export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 # DISABLED - it makes some trouble
+
+# Setup less for UTF-8 
+export LESSCHARSET=utf-8
