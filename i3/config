@@ -213,11 +213,18 @@ client.focused_inactive #073642 #073642 #eee8d5 #6c71c4
 client.unfocused #073642 #073642 #93a1a1 #586e75
 client.urgent #d33682 #d33682 #fdf6e3 #dc322f
 
+###############
+# Startup setup
+###############
+
 # Two display setup
 exec --no-startup-id xrandr --output DP1 --auto --primary --output eDP1 --auto --right-of DP1
 
-# Startup setup
-exec --no-startup-id i3-msg ; exec --no-startup-id xsetroot -solid "#123456"; exec --no-startup-id dunst -conf ~/.i3/dunstrc;
+# MSG module
+exec --no-startup-id i3-msg
+
+# Dunst for notifications
+exec --no-startup-id dunst -conf ~/.i3/dunstrc &
 
 # Keyboard Layouts
 # Handled by script now
@@ -228,6 +235,9 @@ exec --no-startup-id numlockx on
 
 # Network Manager
 exec --no-startup-id nm-applet
+
+# Wallpaper
+ exec --no-startup-id xsetroot -solid '#123456'
 
 # Copy.com
 # exec --nostartup-id ~/copy/x86_64/CopyAgent &
