@@ -7,6 +7,7 @@ vim
 iotop
 networkmanager
 networkmanager-openvpn
+network-manager-applet
 xorg
 firefox
 pidgin
@@ -14,6 +15,7 @@ pidgin
 
 # i3
 alsa-utils
+libnotify
 dunst
 numlockx
 scrot
