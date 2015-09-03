@@ -18,6 +18,4 @@ ln -sf ~/.mydots/X/Xdefaults ~/.Xdefaults
 ln -sf ~/.mydots/i3/i3status.conf ~/.i3status.conf
 ln -sf ~/.mydots/python/pylintrc ~/.pylintrc
 
-# git clone git://github.com/klen/python-mode.git ~/.mydots/vim/bundle/python-mode
 git clone  -q git://github.com/altercation/vim-colors-solarized.git ~/.mydots/vim/bundle/vim-colors-solarized
-git clone -q git://github.com/tpope/vim-fugitive.git ~/.mydots/vim/bundle/vim-fugitive
