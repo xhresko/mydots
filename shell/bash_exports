@@ -24,8 +24,11 @@ export MANPAGER="less -X"
 
 # Make new shells get the history lines from all previous
 # shells instead of the default "last window closed" history
-# export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+#export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 # DISABLED - it makes some trouble
 
 # Setup less for UTF-8 
 export LESSCHARSET=utf-8
+
+# Fix colors for Midnight Commander
+export MC_SKIN=$HOME/.mydots/mc/solarized.ini
