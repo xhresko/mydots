@@ -14,3 +14,6 @@ for (( i = 0; i < ${#KBLAY[@]}; i++ )); do
        fi
    fi
 done
+
+LG=$(setxkbmap -print | awk -F"+" '/xkb_symbols/ {print $2}')
+notify-send "Keyboard layout" $LG -t 1 -u low
