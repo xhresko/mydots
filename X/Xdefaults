@@ -27,9 +27,10 @@ URxvt.internalBorder:       3
 URxvt.lineSpace:            0
 
 ! Fonts
-URxvt.allow_bold:           true
-URxvt*font: xft:Terminus:pixelsize=18
-!! URxvt*boldFont: xft:TerminusBold:pixelsize=18
+ URxvt.allow_bold:           true
+
+ URxvt.font:     xft:xos4 Terminus:size=12
+ URxvt.boldFont: xft:xos4 Terminus:bold:size=12
 
 ! Fix font space
 /* URxvt*letterSpace: -1 */
