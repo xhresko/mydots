@@ -6,12 +6,10 @@ mc
 vim
 iotop
 networkmanager
-networkmanager-openvpn
 network-manager-applet
 xorg
 firefox
-pidgin
-
+tmux
 
 # i3
 alsa-utils
