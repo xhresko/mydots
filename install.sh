@@ -3,8 +3,10 @@
 # Init config files from .mydots directory.
 #
 
-rm -fr ~/.bash_profile ~/.bashrc ~/.gitattributes ~/.gitignore ~/.gitconfig ~/.vim ~/.vimrc ~/.gvimrc
+rm -fr ~/.bash_profile ~/.bashrc ~/.gitattributes ~/.gitignore ~/.gitconfig ~/.vim ~/.vimrc ~/.gvimrc ~/.emacs.d/init.el
+mkdir -p ~/.emacs.d
 
+ln -sf ~/.mydots/emacs/init.el ~/.emacs.d/init.el
 ln -sf ~/.mydots/shell/bash_profile ~/.bash_profile
 ln -sf ~/.mydots/shell/bashrc ~/.bashrc
 ln -sf ~/.mydots/git/gitattributes ~/.gitattributes
@@ -16,5 +18,6 @@ ln -sf ~/.mydots/vim/gvimrc ~/.gvimrc
 ln -sf ~/.mydots/i3/ ~/.i3
 ln -sf ~/.mydots/X/Xdefaults ~/.Xdefaults
 ln -sf ~/.mydots/i3/i3status.conf ~/.i3status.conf
+ln -sf ~/.mydots/python/pylintrc ~/.pylintrc
 
 git clone  -q git://github.com/altercation/vim-colors-solarized.git ~/.mydots/vim/bundle/vim-colors-solarized
