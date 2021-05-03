@@ -29,15 +29,15 @@ elif [[ $platform == 'freebsd' ]]; then
 fi
 
 # some more ls aliases
-alias ll='ls -l'
+alias ll='ls -lG'
 # Long form no user group, color
-alias l="ls -o"
+alias l="ls -oG"
 # Order by last modified, long form no user group, color
-alias lt="ls -to"
+alias lt="ls -toG"
 # List all except . and ..., color, mark file types, long form no user group, file size
-alias la="ls -AFoh"
+alias la="ls -AFohG"
 # List all except . and ..., color, mark file types, long form no use group, order by last modified, file size
-alias lat="ls -AFoth"
+alias lat="ls -AFothG"
 
 # Concatenate and print content of files (add line numbers)
 alias catn="cat -n"
