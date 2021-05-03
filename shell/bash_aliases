@@ -48,3 +48,11 @@ alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | printf '=> Public key copied to 
 # Use screen megabuffer
 alias screen="screen -h 100000"
 
+# Git graph
+alias gitlg="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
+
+# Weather
+alias weather="curl https://wttr.in/${1}"
+
+# IPinfo
+alias ipinfo="curl ipinfo.io"
