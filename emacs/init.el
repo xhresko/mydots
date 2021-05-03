@@ -13,7 +13,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(inhibit-startup-screen nil)
- '(initial-buffer-choice "~/Documents/org/todo.org"))
+ '(initial-buffer-choice "~/Documents/org/todo.org")
+ '(package-selected-packages '(markdown-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -27,3 +28,12 @@
                     :height 160
                     :weight 'normal
                     :width 'normal)
+
+;; Setup MELPA
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa-stable" . "https://stable.melpa.org/packages/"))
+(package-initialize)
+
+;; Show line numbers
+ (setq line-number-mode t)
