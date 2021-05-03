@@ -35,7 +35,7 @@ if has("syntax")
     " Set dark background
     set background=dark
     " Set colorscheme
-    colorscheme solarized
+    colorscheme slate
     " Fix for terminal colors
     hi Comment ctermfg=Magenta
 endif
