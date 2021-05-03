@@ -29,6 +29,3 @@ export MANPAGER="less -X"
 
 # Setup less for UTF-8 
 export LESSCHARSET=utf-8
-
-# Fix colors for Midnight Commander
-export MC_SKIN=$HOME/.mydots/mc/solarized.ini
