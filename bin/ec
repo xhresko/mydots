@@ -1,0 +1,14 @@
+'#!/bin/bash
+
+SOCKET_FILE=$(~/.mydots/bin/emacsserver)
+
+EMACS=/Applications/Emacs.app/Contents/MacOS/Emacs
+
+EMACS_CLIENT=/Applications/Emacs.app/Contents/MacOS/bin/emacsclient
+
+if [[ $SOCKET_FILE == "" ]]; then
+    echo "Starting Emacs server ..."
+    $EMACS --chdir $PWD --execute "(server-start)" $@ &
+else
+    $EMACS_CLIENT -n $@ --socket-name $SOCKET_FILE
+fi
